@@ -199,7 +199,7 @@ exports.comparePortfolio = async (req, res) => {
         }
 
         // Get portfolio historical data
-        const portfolioResponse = await axios.post('http://localhost:5000/api/v1/portfolios/getHistoricalRecords', {
+        const portfolioResponse = await axios.post('https://axionanalytics.onrender.com/api/v1/portfolios/getHistoricalRecords', {
             portfolioId,
             range
         });
@@ -331,7 +331,7 @@ exports.calculateRiskMetrics = async (req, res) => {
         }
 
         // Get portfolio historical data
-        const portfolioResponse = await axios.post('http://localhost:5000/api/v1/portfolios/getHistoricalRecords', {
+        const portfolioResponse = await axios.post('https://axionanalytics.onrender.com/api/v1/portfolios/getHistoricalRecords', {
             portfolioId,
             range
         });

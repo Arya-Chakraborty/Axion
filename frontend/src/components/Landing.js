@@ -366,9 +366,9 @@ const LandingPage = () => {
                                             py: 2,
                                             fontSize: '1rem'
                                         }}
-                                        onClick={() => navigate(isSignedIn ? '/dashboard' : '/login')}
+                                        onClick={() => navigate(isSignedIn ? '/xplore' : '/login')}
                                     >
-                                        {isSignedIn ? 'Proceed to Your Dashboard ▶' : 'Proceed to Login ▶'}
+                                        {isSignedIn ? 'Proceed to Market ▶' : 'Proceed to Login ▶'}
                                     </CyberButton>
                                 </NeonBorderBox>
                             </Stack>

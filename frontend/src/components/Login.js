@@ -61,10 +61,10 @@ const Login = () => {
               <span className="text-lg font-medium text-gray-300">Hello, {user?.fullName || "User"} 👋</span>
             </div>
             <button
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/xplore")}
               className="mt-4 px-4 py-2 bg-gradient-to-r from-purple-500 to-orange-500 text-white font-medium rounded-lg shadow-md hover:opacity-90 transition duration-300"
             >
-              Go to Dashboard
+              Go to Market
             </button>
           </div>
         </SignedIn>
@@ -72,7 +72,7 @@ const Login = () => {
         <SignedOut>
           <div className="flex flex-col items-center text-center">
             <SignIn
-              fallbackRedirectUrl="/xplore"
+              redirectUrl="/xplore"
             />
           </div>
         </SignedOut>

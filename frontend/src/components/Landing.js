@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import {
     Box, Button, Container, Typography, Card, CardContent,
     Grid, Avatar, Divider, ThemeProvider, createTheme,
-    styled, useMediaQuery, Chip, Stack
+    styled, useMediaQuery, Chip, Stack, GlobalStyles
 } from '@mui/material';
 import {
     ShowChart, Timeline, Assessment, PieChart as PieChartIcon,
@@ -16,6 +16,7 @@ import Navbar from './Navbar';
 import Squares from './Squares';
 import PixelCard from './PixelCard';
 import { useUser } from '@clerk/clerk-react';
+
 // Futuristic Theme Configuration
 const theme = createTheme({
     palette: {
@@ -267,6 +268,20 @@ const LandingPage = () => {
 
     return (
         <>
+            <GlobalStyles styles={{
+                html: {
+                    overscrollBehavior: 'none',
+                    height: '100%',
+                    width: '100%',
+                    overflowX: 'hidden'
+                },
+                body: {
+                    overscrollBehavior: 'none',
+                    height: '100%',
+                    width: '100%',
+                    overflowX: 'hidden'
+                }
+            }} />
             {/* Background with Squares Animation */}
             <Box sx={{
                 position: 'fixed',
@@ -276,7 +291,17 @@ const LandingPage = () => {
                 bottom: 0,
                 zIndex: -2,
                 background: 'radial-gradient(circle at 20% 30%, #0a0a12 0%, #000000 100%)',
-                overflow: 'hidden'
+                backgroundColor: '#0a0a12',
+                overflow: 'hidden',
+                height: '100vh',
+                width: '100vw',
+                // Mobile-specific fixes
+                '@media (max-width: 600px)': {
+                    overflow: 'hidden',
+                    position: 'fixed',
+                    height: '100%',
+                    touchAction: 'none'
+                }
             }}>
                 <Squares
                     speed={0.5}
@@ -359,17 +384,17 @@ const LandingPage = () => {
                             </Typography>
 
                             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center">
-                                    <CyberButton
-                                        size="large"
-                                        sx={{
-                                            px: 5,
-                                            py: 2,
-                                            fontSize: '1rem'
-                                        }}
-                                        onClick={() => navigate(isSignedIn ? '/xplore' : '/login')}
-                                    >
-                                        {isSignedIn ? 'Proceed to Market ▶' : 'Proceed to Login ▶'}
-                                    </CyberButton>
+                                <CyberButton
+                                    size="large"
+                                    sx={{
+                                        px: 5,
+                                        py: 2,
+                                        fontSize: '1rem'
+                                    }}
+                                    onClick={() => navigate(isSignedIn ? '/xplore' : '/login')}
+                                >
+                                    {isSignedIn ? 'Proceed to Market ▶' : 'Proceed to Login ▶'}
+                                </CyberButton>
                             </Stack>
                         </Box>
                     </Box>

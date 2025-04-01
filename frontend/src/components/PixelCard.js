@@ -232,7 +232,7 @@ export default function PixelCard({
   const onFocus = (e) => {
     if (e.currentTarget.contains(e.relatedTarget)) return;
     handleAnimation("appear");
-  };
+  }
   const onBlur = (e) => {
     if (e.currentTarget.contains(e.relatedTarget)) return;
     handleAnimation("disappear");

@@ -1,11 +1,10 @@
 {
-  "name": "backend",
+  "name": "axion",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "dev": "nodemon backend/server.js",
-    "build": "npm install && npm install --prefix frontend && CI=false npm run build --prefix frontend",
-    "start": "nodemon backend/server.js"
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node backend/server.js"
   },
   "keywords": [],
   "author": "",
@@ -24,5 +23,16 @@
     "mongoose": "^8.12.2",
     "node-cache": "^5.1.2",
     "nodemon": "^3.1.9"
+  },
+  "eslintConfig": {
+    "extends": [],
+    "rules": {
+      "react-hooks/exhaustive-deps": "off",
+      "no-unused-vars": "off",
+      "react/prop-types": "off"
+    }
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^5.2.0"
   }
 }

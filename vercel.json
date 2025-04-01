@@ -21,10 +21,7 @@
     "rewrites": [
         {
             "source": "/assets/(.*)",
-            "destination": "/frontend/build/$1",
-            "headers": {
-                "Cache-Control": "public, max-age=31536000, immutable"
-            }
+            "destination": "/frontend/build/$1"
         },
         {
             "source": "/api/(.*)",

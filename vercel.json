@@ -1,50 +1,23 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "frontend/package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "build"
-            }
-        },
-        {
-            "src": "backend/server.js",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "backend/**/*"
-                ]
-            }
-        }
+      {
+        "src": "backend/server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/build",
+        "use": "@vercel/static"
+      }
     ],
-    "rewrites": [
-        {
-            "source": "/assets/(.*)",
-            "destination": "/frontend/build/$1"
-        },
-        {
-            "source": "/api/(.*)",
-            "destination": "/backend/server.js"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/frontend/build"
-        }
-    ],
-    "headers": [
-        {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "X-Frame-Options",
-                    "value": "DENY"
-                },
-                {
-                    "key": "Content-Security-Policy",
-                    "value": "default-src 'self'"
-                }
-            ]
-        }
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "backend/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "frontend/build/index.html"
+      }
     ]
-}
+  }

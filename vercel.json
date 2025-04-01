@@ -26,20 +26,10 @@
         {
             "source": "/api/(.*)",
             "destination": "/backend/server.js",
-            "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE",
-                "PATCH"
-            ]
         },
         {
             "source": "/(.*)",
             "destination": "/frontend/build",
-            "headers": {
-                "Cache-Control": "no-cache"
-            }
         }
     ],
     "headers": [

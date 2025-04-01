@@ -291,7 +291,8 @@ const LandingPage = () => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: 'linear-gradient(135deg, rgba(156, 39, 176, 0.05) 0%, transparent 100%)'
+                    background: 'linear-gradient(135deg, rgba(156, 39, 176, 0.05) 0%, transparent 100%)',
+                    overflow: 'hidden'
                 }} />
             </Box>
 
@@ -358,7 +359,6 @@ const LandingPage = () => {
                             </Typography>
 
                             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center">
-                                <NeonBorderBox>
                                     <CyberButton
                                         size="large"
                                         sx={{
@@ -370,7 +370,6 @@ const LandingPage = () => {
                                     >
                                         {isSignedIn ? 'Proceed to Market ▶' : 'Proceed to Login ▶'}
                                     </CyberButton>
-                                </NeonBorderBox>
                             </Stack>
                         </Box>
                     </Box>

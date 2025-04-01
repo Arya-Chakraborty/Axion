@@ -222,7 +222,8 @@ const Dashboard = () => {
                 right: 0,
                 bottom: 0,
                 zIndex: -1,
-                background: 'rgba(7, 7, 7, 0.9)'
+                background: 'rgba(7, 7, 7, 0.9)',
+                overflow: 'hidden'
             }} />
 
             <Navbar />

@@ -3,7 +3,7 @@ import {
     Box, Button, Container, Typography, Card, CardContent,
     CircularProgress, Dialog, DialogTitle, DialogContent,
     DialogActions, TextField, Chip, ThemeProvider,
-    createTheme, Avatar
+    createTheme, Avatar, GlobalStyles
 } from '@mui/material';
 import { Add, ArrowDropUp, ArrowDropDown, Delete } from '@mui/icons-material';
 import { green, red, orange, deepPurple } from '@mui/material/colors';
@@ -86,7 +86,7 @@ const Dashboard = () => {
         try {
             setPriceLoading(true);
             const symbols = [];
-            
+
             // Collect all unique symbols from all portfolios
             portfolios.forEach(portfolio => {
                 portfolio.holdings.forEach(holding => {
@@ -99,7 +99,7 @@ const Dashboard = () => {
             if (symbols.length === 0) return;
 
             // Fetch prices for all symbols
-            const pricePromises = symbols.map(symbol => 
+            const pricePromises = symbols.map(symbol =>
                 axios.get(`/api/v1/getFundPrice/${symbol}`)
             );
 
@@ -215,6 +215,21 @@ const Dashboard = () => {
 
     return (
         <>
+            <GlobalStyles styles={{
+                html: {
+                    backgroundColor: 'rgba(7, 7, 7, 0.9)',
+                    overscrollBehavior: 'none',
+                    height: '100dvh',
+                    width: '100%',
+                    overflowX: 'hidden',
+                },
+                body: {
+                    overscrollBehavior: 'none',
+                    height: '100dvh',
+                    width: '100%',
+                    overflowX: 'hidden',
+                }
+            }} />
             <Box sx={{
                 position: 'fixed',
                 top: 0,
@@ -223,7 +238,15 @@ const Dashboard = () => {
                 bottom: 0,
                 zIndex: -1,
                 background: 'rgba(7, 7, 7, 0.9)',
-                overflow: 'hidden'
+                backgroundColor: 'rgba(7, 7, 7, 0.9)',
+                overflow: 'hidden',
+                minHeight: '100dvh', // ✅ Use 100dvh instead of 100vh
+                width: '100vw',
+                '@media (max-width: 600px)': {
+                    position: 'fixed',
+                    minHeight: '100dvh', // ✅ Ensure full mobile screen height
+                    touchAction: 'none'
+                }
             }} />
 
             <Navbar />
@@ -578,7 +601,7 @@ const Dashboard = () => {
                         Confirm Deletion
                     </DialogTitle>
 
-                    <DialogContent sx={{ py: 2, mt:1 }}>
+                    <DialogContent sx={{ py: 2, mt: 1 }}>
                         <Typography>
                             Are you sure you want to delete portfolio <strong>"{portfolioToDelete?.name}"</strong>?
                         </Typography>

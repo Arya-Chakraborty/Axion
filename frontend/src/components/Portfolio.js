@@ -10,7 +10,7 @@ import {
     DialogContent,
     DialogActions,
     TextField,
-    InputAdornment
+    InputAdornment, GlobalStyles
 } from '@mui/material';
 import {
     ArrowDropUp, ArrowDropDown,
@@ -385,6 +385,21 @@ const FundDetails = () => {
 
     return (
         <>
+            <GlobalStyles styles={{
+                html: {
+                    backgroundColor: 'rgba(7, 7, 7, 0.9)',
+                    overscrollBehavior: 'none',
+                    height: '100dvh',
+                    width: '100%',
+                    overflowX: 'hidden',
+                },
+                body: {
+                    overscrollBehavior: 'none',
+                    height: '100dvh',
+                    width: '100%',
+                    overflowX: 'hidden',
+                }
+            }} />
             <Box sx={{
                 position: 'fixed',
                 top: 0,
@@ -393,8 +408,15 @@ const FundDetails = () => {
                 bottom: 0,
                 zIndex: -1,
                 background: 'rgba(7, 7, 7, 0.9)',
-                overflow: 'hidden'
-
+                backgroundColor: 'rgba(7, 7, 7, 0.9)',
+                overflow: 'hidden',
+                minHeight: '100dvh', // ✅ Use 100dvh instead of 100vh
+                width: '100vw',
+                '@media (max-width: 600px)': {
+                    position: 'fixed',
+                    minHeight: '100dvh', // ✅ Ensure full mobile screen height
+                    touchAction: 'none'
+                }
             }} />
 
             <Navbar />

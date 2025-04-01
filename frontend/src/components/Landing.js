@@ -270,16 +270,17 @@ const LandingPage = () => {
         <>
             <GlobalStyles styles={{
                 html: {
+                    backgroundColor: '#0a0a12',
                     overscrollBehavior: 'none',
-                    height: '100%',
+                    height: '100dvh',
                     width: '100%',
-                    overflowX: 'hidden'
+                    overflowX: 'hidden',
                 },
                 body: {
                     overscrollBehavior: 'none',
-                    height: '100%',
+                    height: '100dvh',
                     width: '100%',
-                    overflowX: 'hidden'
+                    overflowX: 'hidden',
                 }
             }} />
             {/* Background with Squares Animation */}
@@ -293,16 +294,15 @@ const LandingPage = () => {
                 background: 'radial-gradient(circle at 20% 30%, #0a0a12 0%, #000000 100%)',
                 backgroundColor: '#0a0a12',
                 overflow: 'hidden',
-                height: '100vh',
+                minHeight: '100dvh', // ✅ Use 100dvh instead of 100vh
                 width: '100vw',
-                // Mobile-specific fixes
                 '@media (max-width: 600px)': {
-                    overflow: 'hidden',
                     position: 'fixed',
-                    height: '100%',
+                    minHeight: '100dvh', // ✅ Ensure full mobile screen height
                     touchAction: 'none'
                 }
-            }}>
+            }} >
+
                 <Squares
                     speed={0.5}
                     squareSize={40}

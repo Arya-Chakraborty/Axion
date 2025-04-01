@@ -25,11 +25,11 @@
         },
         {
             "source": "/api/(.*)",
-            "destination": "/backend/server.js",
+            "destination": "/backend/server.js"
         },
         {
             "source": "/(.*)",
-            "destination": "/frontend/build",
+            "destination": "/frontend/build"
         }
     ],
     "headers": [

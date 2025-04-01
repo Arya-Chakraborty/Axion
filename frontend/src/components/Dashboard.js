@@ -430,8 +430,9 @@ const Dashboard = () => {
                             borderRadius: 1,
                             border: '1px dashed rgba(255,255,255,0.1)',
                             mt: 4
+
                         }}>
-                            <Typography variant="h5" sx={{ mb: 2 }}>
+                            <Typography variant="h5" sx={{ mb: 2 }} color="text.secondary">
                                 No portfolios yet
                             </Typography>
                             <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>

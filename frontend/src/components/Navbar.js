@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800">
           <div className="flex flex-col items-center gap-3 py-3">
             <NavItem to="/dashboard" text="Dashboard" onClick={() => setIsOpen(false)} />
-            <NavItem to="/explore" text="Explore" onClick={() => setIsOpen(false)} />
+            <NavItem to="/xplore" text="Xplore" onClick={() => setIsOpen(false)} />
             <NavItem to="/analytics" text="Analytics" onClick={() => setIsOpen(false)} />
             <NavItem to="/about" text="About Us" onClick={() => setIsOpen(false)} />
           </div>

@@ -281,7 +281,7 @@ export default function NextGenFundExplorer() {
     <>
       <GlobalStyles styles={{
         html: {
-          backgroundColor: 'rgba(7, 7, 7, 0.9)',
+          backgroundColor: '#0a0a12',
           overscrollBehavior: 'none',
           height: '100dvh',
           width: '100%',
@@ -302,7 +302,7 @@ export default function NextGenFundExplorer() {
         bottom: 0,
         zIndex: -1,
         background: 'rgba(7, 7, 7, 0.9)',
-        backgroundColor: 'rgba(7, 7, 7, 0.9)',
+        backgroundColor: '#0a0a12',
         overflow: 'hidden',
         minHeight: '100dvh', // ✅ Use 100dvh instead of 100vh
         width: '100vw',

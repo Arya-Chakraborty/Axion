@@ -18,8 +18,10 @@ app.get('*', (_, res) => {
    res.sendFile(path.resolve(_dirname, "frontend", "build", "index.html")); 
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Proxy server running on port ${PORT}`));
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`Proxy server running on port ${PORT}`));
 
 const connectToDB = require("./config/database");
 connectToDB();
+
+module.exports = app;
